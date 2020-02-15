@@ -1,0 +1,13 @@
+<!--
+  1 text 相当于以前的span标签 
+  2 view 相当于div
+-->
+<text>pages/demo03/demo03.wxml</text>
+<text>1</text>
+<text>2</text>
+<view>
+	sdfs
+</view>
+<view>
+	sdjkfhsdjk
+</view>
