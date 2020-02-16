@@ -1,8 +1,7 @@
-<!--
-  1 text 相当于以前的span标签 
-  2 view 相当于div
--->
-<text>pages/demo03/demo03.wxml</text>
+<!-- 1 text 相当于以前的span标签 
+  2 view 相当于div 
+  3 checkbox 以前的复选框 -->
+<!-- <text>pages/demo03/demo03.wxml</text>
 <text>1</text>
 <text>2</text>
 <view>
@@ -10,4 +9,40 @@
 </view>
 <view>
 	sdjkfhsdjk
+</view> -->
+<!-- 1 字符串 -->
+<view>{{msg}}</view>
+<!-- 2 数字类型 -->
+<view>{{num}}</view>
+<!-- 3 布尔类型 -->
+<view>{{isGirl}}</view>
+<!-- 4 object类型 -->
+<view>{{user.name}}</view>
+<view>{{user.age}}</view>
+<view>{{user.set}}</view>
+<!-- 5 在标签的属性中使用 -->
+<view data-num="{{num}}">自定义属性</view>
+<!-- 6 使用布尔类型充当属性 
+        1.字符串和花括号之间一定不要存在空格   否则会导致识别失败
+            错误写法示范
+  <checkbox checked="       {{isChecked}}"></checkbox>
+  -->
+<view>
+  <checkbox checked="{{isChecked}}"></checkbox>
 </view>
+
+<!-- 
+  7 运算 => 表达式
+    1 可以在花括号中 加入表达式 -- "语句"
+    2 表达式
+      指一些简单的 运算  数字运算 字符串 拼接 逻辑运算...
+      1 数字加减
+      2 字符串拼接
+      3 三元表达式
+    3 语句
+      1 复杂的代码段
+        1 if else
+        2 switch
+        3 do while.. 
+        4 for..  
+ -->
