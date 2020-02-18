@@ -27,6 +27,7 @@
             错误写法示范
   <checkbox checked="       {{isChecked}}"></checkbox>
   -->
+  <text >6 使用布尔类型充当属性演示: </text>
 <view>
   <checkbox checked="{{isChecked}}"></checkbox>
 </view>
@@ -46,3 +47,105 @@
         3 do while.. 
         4 for..  
  -->
+ <text >7 运算演示:</text>
+ <view >数字加减:{{1+1}}</view>
+ <view >字符串拼接:{{'1'+'1'}}</view>
+ <view >三元表达式:{{ 10%2===0?'偶数':'奇数'}}</view>
+ <view >三元表达式:{{ 10%3===0?'偶数':'奇数'}}</view>
+
+
+<!-- 
+  8 列表循环
+    1 wx:for="{{数组或者对象}}"  wx:for-item="循环项的名称"  wx:for-index="循环项的索引"
+    2 wx:key="唯一的值" 用来提高列表渲染的性能
+      1 wx:key 绑定一个普通字符串的时候 那么这个字符串肯定是循环数组中对象唯一属性
+      2 wx:key="*this"  表示你的数组是一个普通数组 *this表示循环项
+        [1,2,3,4,5] ["dsfsd","sdkfjs","4"]
+    3 当出现数组嵌套循环的时候 尤其要注意 以下绑定的名称不要重名
+      wx:for="{{lists}}" 
+      wx:for-item="list" 
+      wx:for-index="index"
+      wx:key="id"
+    4 默认情况下 不写  
+       wx:for-item="list"  wx:for-index="index"
+     小程序也会把 循环项的名称和索引的名称 list 和 index
+    只有一层循环的话  (wx:for-item="list"  wx:for-index="index")  可以省略
+
+-->
+<view>
+  <view 
+  wx:for="{{lists}}" 
+  wx:for-item="list" 
+  wx:for-index="index"
+  wx:key="id">
+  索引:{{index}}---值:{{list.name}}
+  </view>
+</view>
+
+<!-- 
+  9 对象循环
+    1 wx:for="{{对象}}" wx:for-item="对象的值"  wx:for-index="对象的属性"
+ -->
+ <view >
+  <view >对象循环</view>
+  <view wx:for="{{user}}" wx:for-index="key" wx:for-item="value" wx:key="age">
+  属性:{{key}}--值:{{value}}
+  </view>
+ </view>
+
+ <!-- 
+   10 black
+    1 占位符
+    2 写代码的时候 可以看到这个标签存在的
+    3 页面渲染 小程序会移除
+  -->
+
+<view>
+    <block
+    wx:for="{{lists}}" 
+    wx:for-item="list" 
+    wx:for-index="index"
+    wx:key="id"
+    class="my_list"
+    >
+    索引:{{index}}---值:{{list.name}}
+    </block>
+</view>
+
+
+<!-- 
+  11 条件渲染
+    1 wx:if="{{true/false}}"
+      1 if ,else , if else 
+        wx:if
+        wx:elif
+        wx:else
+    2 hidden  隐藏标签
+      1 在标签上直接加入属性 hidden   
+      2 hidden="{{true}}" 
+
+    3 什么场景下用哪个
+      1 当标签不是频繁的切换显示 优先使用 wx:if
+        直接把标签从页面移除
+      2 当标签频繁的切换显示 优先使用 hidden
+        通过添加样式
+        hidden 不要和 样式 display一起使用
+ -->
+ <view >
+  <view >条件渲染</view>
+  <view wx:if="{{true}}">显示</view>
+  <view wx:if="{{false}}" >隐藏</view>
+
+  <view wx:if="{{false}}">1</view>
+  <view wx:elif="{{false}}">2</view>
+  <view wx:else="{{true}}">3</view>
+
+  <view >-----</view>
+  <view hidden>hidden1</view>
+  <view hidden="{{false}}">hidden2</view>
+
+  <view >---00---</view>
+  <view wx:if="{{false}}">wx:if</view>
+  <view hidden>hidden</view>
+  <view hidden style="display:flex;">hidden</view>
+ </view>

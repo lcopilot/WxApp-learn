@@ -1,0 +1,6 @@
+<!-- 
+    1 长按文字复制
+ -->
+<text selectable="true" decode>
+    text&nbsp;123
+</text>

@@ -1,0 +1,12 @@
+/*
+1 定义一个less变量
+*/
+text {
+  color: yellow;
+}
+view .viel tex {
+  color: red;
+}
+view {
+  color: green;
+}

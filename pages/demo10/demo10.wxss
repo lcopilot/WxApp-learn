@@ -1,0 +1,7 @@
+swiper{
+    width: 100%;
+    height: calc(100vw*325/610);
+}
+image{
+    width: 100%;
+}
